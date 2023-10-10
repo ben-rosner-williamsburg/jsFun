@@ -25,18 +25,21 @@ const kittyPrompts = {
         // ['Tiger', 'Snickers']
 
         /* CODE GOES HERE */
-
+    return kitties.filter((kitty) => kitty.color === "orange").map(orangeKitty => orangeKitty.name);
     // Annotation:
     // Write your annotation here as a comment
+    // First we are filtering the orange kitties and filtering out all of the other kitties. Then we are creating a new area of the orange kitties' names.
   },
 
   sortByAge() {
     // Sort the kitties by their age
-
     /* CODE GOES HERE */
-
+    return kitties.sort((kittyA, kittyB) => {
+         return kittyB.age - kittyA.age;
+      })
     // Annotation:
     // Write your annotation here as a comment
+    // We are sorting the kitties in reverse order by age. The kittyA and kittyB are parameters that are used to compare each two kitties in the array.
   },
 
   growUp() {
@@ -54,6 +57,9 @@ const kittyPrompts = {
     // ...etc]
 
     /* CODE GOES HERE */
+    
+    kitties.forEach((kitty) => kitty.age += 2);
+    return kitties;
   }
 };
 
